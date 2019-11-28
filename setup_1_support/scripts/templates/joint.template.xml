@@ -1,0 +1,5 @@
+<joint name="world_to_$name" type="fixed">
+  <parent link="world"/>
+  <child link="$name"/>
+  <origin xyz="$xyz" rpy="0 0 0" />
+</joint>

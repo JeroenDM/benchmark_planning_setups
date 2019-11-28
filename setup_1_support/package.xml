@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>setup_1_support</name>
+  <version>0.0.1</version>
+  <description>Planning setup 1 to execute planning benchmarks</description>
+
+  <maintainer email="jeroen.demaeyer@kuleuven.be">Jeroen De Maeyer</maintainer>
+  <license>Apache-2.0</license>
+
+
+  <!-- Url tags are optional, but multiple are allowed, one per tag -->
+  <!-- Optional attribute type can be: website, bugtracker, or repository -->
+  <!-- Example: -->
+  <!-- <url type="website">http://wiki.ros.org/setup_3_support</url> -->
+
+
+  <!-- Author tags are optional, multiple are allowed, one per tag -->
+  <!-- Authors do not have to be maintainers, but could be -->
+  <!-- Example: -->
+  <!-- <author email="jane.doe@example.com">Jane Doe</author> -->
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>xacro</build_depend>
+
+  <build_export_depend>xacro</build_export_depend>
+
+  <exec_depend>xacro</exec_depend>
+  <exec_depend>rviz_tools_py</exec_depend>
+  <exec_depend>kuka_kr5_support</exec_depend>
+
+  <export></export>
+</package>

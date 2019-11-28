@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: setup_1_support
+    relative_path: urdf/setup_1.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/demo_table.srdf
+  CONFIG:
+    author_name: Jeroen De Maeyer
+    author_email: jeroen.demaeyer@kuleuven.be
+    generated_timestamp: 1574943753

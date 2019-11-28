@@ -1,0 +1,12 @@
+variables
+config home 0 0 0 0 0 0
+pose start $path_start_xyz $path_start_xyzw
+pose stop $path_stop_xyz $path_start_xyzw
+
+commands
+movep start
+movelin stop constraints c1
+movej home
+
+constraints
+c1 relative rotation tolerance z -3.14159265359 3.14159265359

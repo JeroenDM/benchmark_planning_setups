@@ -1,0 +1,10 @@
+{
+    "python.pythonPath": "/usr/bin/python",
+    "python.autoComplete.extraPaths": [
+        "/opt/ros/melodic/lib/python2.7/dist-packages",
+        "../../devel/lib/python2.7/dist-packages",
+        "../nexon/nexon/src",
+        "../rviz_tools_py/src"
+    ],
+    "python.formatting.provider": "autopep8"
+}

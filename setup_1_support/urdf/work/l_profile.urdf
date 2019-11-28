@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<robot name="l_profile" xmlns:xacro="http://wiki.ros.org/xacro">
+
+<link name="work" />
+
+<link name="l_base">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <box size="0.2 1 0.02"/>
+    </geometry>
+    <material name="green"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <box size="0.2 1 0.02"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="l_side">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <box size="0.02 1 0.2"/>
+    </geometry>
+    <material name="green"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <box size="0.02 1 0.2"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="world_to_work" type="fixed">
+  <parent link="world"/>
+  <child link="work"/>
+  <origin xyz="0.8 -0.5 0" rpy="0 0 0" />
+</joint>
+
+<joint name="work_to_l_base" type="fixed">
+  <parent link="work"/>
+  <child link="l_base"/>
+  <origin xyz="0.1 0.5 0.01" rpy="0 0 0" />
+</joint>
+
+<joint name="l_base_to_l_side" type="fixed">
+  <parent link="l_base"/>
+  <child link="l_side"/>
+  <origin xyz="0.09 0 0.11" rpy="0 0 0" />
+</joint>
+
+</robot>

@@ -1,0 +1,18 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/opt/ros/melodic/include/**",
+        "/home/jeroen/Dropbox/ros/desc_server_ws/devel/include/**",
+        "/home/jeroen/Dropbox/ros/desc_server_ws/src/benchmark_planning_setups/kuka_experimental/kuka_eki_hw_interface/include/**",
+        "/home/jeroen/Dropbox/ros/desc_server_ws/src/benchmark_planning_setups/kuka_experimental/kuka_rsi_hw_interface/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ]
+}
