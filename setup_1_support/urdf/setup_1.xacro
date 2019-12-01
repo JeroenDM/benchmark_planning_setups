@@ -58,13 +58,13 @@
     <origin xyz="0 0 0.01" rpy="0 0 0" />
 </joint>
 
-<link name="work" />
+<!-- <link name="work" />
 
 <joint name="world_to_work" type="fixed">
   <parent link="world"/>
   <child link="work"/>
   <origin xyz="0.8 -0.5 0" rpy="0 0 0" />
-</joint>
+</joint> -->
 
 
 <!-- Load a work object -->

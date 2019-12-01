@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot name="l_profile" xmlns:xacro="http://wiki.ros.org/xacro">
 
-<link name="work" />
+<link name="world" />
 
 <link name="l_base">
   <visual>
@@ -35,16 +35,10 @@
   </collision>
 </link>
 
-<!-- <joint name="world_to_work" type="fixed">
+<joint name="world_to_l_base" type="fixed">
   <parent link="world"/>
-  <child link="work"/>
-  <origin xyz="0.8 -0.5 0" rpy="0 0 0" />
-</joint> -->
-
-<joint name="work_to_l_base" type="fixed">
-  <parent link="work"/>
   <child link="l_base"/>
-  <origin xyz="0.1 0.5 0.01" rpy="0 0 0" />
+  <origin xyz="0.9 0 0.01" rpy="0 0 0" />
 </joint>
 
 <joint name="l_base_to_l_side" type="fixed">

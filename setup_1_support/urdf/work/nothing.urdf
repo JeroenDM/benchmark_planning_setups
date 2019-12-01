@@ -1,12 +1,6 @@
 <?xml version="1.0"?>
 <robot name="nothing" xmlns:xacro="http://wiki.ros.org/xacro">
 
-<link name="work"/>
-
-<joint name="world_to_work" type="fixed">
-  <parent link="world"/>
-  <child link="work"/>
-  <origin xyz="0 0 0" rpy="0 0 0" />
-</joint>
+<link name="world"/>
 
 </robot>
