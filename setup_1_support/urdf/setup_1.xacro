@@ -58,10 +58,18 @@
     <origin xyz="0 0 0.01" rpy="0 0 0" />
 </joint>
 
+<link name="work" />
+
+<joint name="world_to_work" type="fixed">
+  <parent link="world"/>
+  <child link="work"/>
+  <origin xyz="0.8 -0.5 0" rpy="0 0 0" />
+</joint>
+
 
 <!-- Load a work object -->
 <!-- <xacro:include filename="$(find setup_1_support)/urdf/work/boxes.urdf" /> -->
-<xacro:include filename="$(find setup_1_support)/urdf/work/$(arg work)" />
+<!-- <xacro:include filename="$(find setup_1_support)/urdf/work/$(arg work)" /> -->
 <!-- <xacro:include filename="$(find setup_1_support)/urdf/work/l_profile.urdf" /> -->
 
 

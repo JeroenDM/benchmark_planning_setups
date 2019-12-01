@@ -35,11 +35,11 @@
   </collision>
 </link>
 
-<joint name="world_to_work" type="fixed">
+<!-- <joint name="world_to_work" type="fixed">
   <parent link="world"/>
   <child link="work"/>
   <origin xyz="0.8 -0.5 0" rpy="0 0 0" />
-</joint>
+</joint> -->
 
 <joint name="work_to_l_base" type="fixed">
   <parent link="work"/>

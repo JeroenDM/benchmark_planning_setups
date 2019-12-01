@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <robot name="table_with_blocks" xmlns:xacro="http://wiki.ros.org/xacro">
 
+<link name="world"/>
+
 <link name="table">
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0"/>

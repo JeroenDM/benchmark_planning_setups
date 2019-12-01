@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <robot name="kingpin" xmlns:xacro="http://wiki.ros.org/xacro">
+<link name="world"/>
 
 <link name="u_profile">
   <visual>
