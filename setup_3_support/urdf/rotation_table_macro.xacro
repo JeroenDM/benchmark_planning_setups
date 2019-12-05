@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+    <xacro:macro name="rotation_table">
+
+        <link name="table_base">
+            <visual>
+                <origin xyz="0 ${-0.53/2} ${1.2/2}" rpy="0 0 0"/>
+                <geometry>
+                <box size="0.53 0.53 1.2"/>
+                </geometry>
+                <material name="gray"/>
+            </visual>
+            <collision>
+                <origin xyz="0 ${-0.53/2} ${1.2/2}" rpy="0 0 0"/>
+                <geometry>
+                <box size="0.53 0.53 1.2"/>
+                </geometry>
+            </collision>
+        </link>
+
+        <link name="small_support">
+            <visual>
+                <origin xyz="0 ${-0.22/2} ${1.0/2}" rpy="0 0 0"/>
+                <geometry>
+                <box size="0.22 0.22 1.0"/>
+                </geometry>
+                <material name="gray"/>
+            </visual>
+            <collision>
+                <origin xyz="0 ${-0.22/2} ${1.0/2}" rpy="0 0 0"/>
+                <geometry>
+                <box size="0.22 0.22 1.0"/>
+                </geometry>
+            </collision>
+        </link>
+
+        <link name="table">
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                <mesh filename="package://setup_3_support/meshes/visual/rotation_table.stl"  scale=".001 .001 .001"/>
+                </geometry>
+                <material name="blue"/>
+            </visual>
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                <mesh filename="package://setup_3_support/meshes/visual/rotation_table.stl"  scale=".001 .001 .001"/>
+                </geometry>
+            </collision>
+        </link>
+
+        <joint name="table_base_to_table" type="revolute">
+            <parent link="table_base"/>
+            <child link="table"/>
+            <limit effort="1000.0" lower="-${radians(180)}" upper="${radians(180)}" velocity="0.5"/>
+            <origin xyz="0 0 0.9027" rpy="0 0 0" />
+            <axis xyz="0 1 0" />
+        </joint>
+
+        <joint name="table_base_to_small_support" type="fixed">
+            <parent link="table_base"/>
+            <child link="small_support"/>
+            <origin xyz="0 ${4.16 + 0.3} 0" rpy="0 0 0" />
+        </joint>
+    
+    </xacro:macro>
+</robot>
