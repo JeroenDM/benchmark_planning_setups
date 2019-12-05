@@ -105,11 +105,14 @@ Connects to work object with link  "table"
 </joint> -->
 
 <link name="work"/>
-<joint name="table_to_wobj" type="fixed">
+
+<joint name="table_to_work" type="fixed">
   <parent link="table"/>
   <child link="work"/>
   <origin xyz="-0.5 0.3 0" rpy="0 0 0" />
 </joint>
+
+<!-- <xacro:include filename="$(find setup_3_support)/urdf/work/halfopen_box.urdf" /> -->
 
 
 </robot>
