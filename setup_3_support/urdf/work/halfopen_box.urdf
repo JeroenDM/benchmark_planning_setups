@@ -6,21 +6,21 @@
 <joint name="work_to_wobj" type="fixed">
   <parent link="work"/>
   <child link="wobj"/>
-  <origin xyz="1 1 0" rpy="0 0 ${radians(90)}" />
+  <origin xyz="1 1 0" rpy="0 0 1.5707963267948966" />
 </joint>
 
 <link name="wobj">
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://setup_3_support/urdf/work/halfopen_box.stl"  scale=".001 .001 .001"/>
+      <mesh filename="halfopen_box.stl"  scale=".001 .001 .001"/>
     </geometry>
     <material name="gray"/>
   </visual>
   <collision>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://setup_3_support/urdf/work/halfopen_box.stl"  scale=".001 .001 .001"/>
+      <mesh filename="halfopen_box.stl"  scale=".001 .001 .001"/>
     </geometry>
   </collision>
 </link>
