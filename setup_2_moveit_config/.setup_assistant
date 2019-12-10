@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: setup_2_support
+    relative_path: urdf/setup_2.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/kuka_on_rail.srdf
+  CONFIG:
+    author_name: Jeroen De Maeyer
+    author_email: jeroen.demaeyer@kuleuven.be
+    generated_timestamp: 1575908058

@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<robot name="kuka_on_rail" xmlns:xacro="http://wiki.ros.org/xacro">
+
+<xacro:include filename="$(find setup_2_support)/urdf/colors.xacro" />
+
+<link name="world"/>
+
+<!-- YZ-rail
+Connects to world with link  "rail_base"
+Connects to robot with link  "robot_mount"
+-->
+<xacro:include filename="$(find setup_2_support)/urdf/rail_macro.xacro" />
+<xacro:rail />
+
+<joint name="world_to_rail_base" type="fixed">
+  <parent link="world"/>
+  <child link="rail_base"/>
+</joint>
+
+<!-- welding robot
+Connects to rail with link          "base_link"
+Connects to end-effector with link  "tool0"
+-->
+<xacro:include filename="$(find kuka_kr5_support)/urdf/kr5_arc_macro.xacro" />
+<xacro:kuka_kr5_arc prefix=""/>
+
+<joint name="rails_to_kuka" type="fixed">
+  <parent link="robot_mount"/>
+  <child link="base_link"/>
+</joint>
+
+<!-- End-effector-->
+<link name="torch">
+    <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+            <mesh filename="package://setup_2_support/meshes/visual/torch.stl"  scale=".01 .01 .01"/>
+        </geometry>
+        <material name="gray"/>
+    </visual>
+    <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+            <mesh filename="package://setup_2_support/meshes/collision/torch.stl"  scale=".01 .01 .01"/>
+        </geometry>
+    </collision>
+</link>
+
+<!-- <link name="torch_tip"/> -->
+<link name="tool_tip"/>
+
+<joint name="tool0_to_torch" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -1.57079632679 0" />
+    <parent link="tool0"/>
+    <child link="torch"/>
+</joint>
+
+<joint name="torch_to_tool_tip" type="fixed">
+    <parent link="torch"/>
+    <child link="tool_tip"/>
+    <origin xyz="0.315 0 0.035" rpy="0 2.3560569232 0" />
+</joint>
+
+<!-- weld tip offset from workpiece -->
+<!-- <joint name="torch_tip_to_tool_tip" type="fixed">
+    <parent link="torch_tip"/>
+    <child link="tool_tip"/>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+</joint> -->
+
+<!-- Rotation table
+Connects to world with link        "table_base"
+Connects to work object with link  "table"
+-->
+<xacro:include filename="$(find setup_2_support)/urdf/rotation_table_macro.xacro" />
+<xacro:rotation_table />
+
+<joint name="world_to_table_base" type="fixed">
+  <parent link="world"/>
+  <child link="table_base"/>
+  <origin xyz="1.5 0 0" rpy="0 0 0" />
+</joint>
+
+<!-- Work -->
+<!-- <link name="wobj">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://setup_2_support/meshes/visual/workobject_1.stl"  scale=".001 .001 .001"/>
+    </geometry>
+    <material name="gray"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://setup_2_support/meshes/collision/workobject_1.stl"  scale=".001 .001 .001"/>
+    </geometry>
+  </collision>
+</link> -->
+
+<!-- <joint name="table_to_wobj" type="fixed">
+  <parent link="table"/>
+  <child link="wobj"/>
+  <origin xyz="-0.5 0.3 0" rpy="0 0 0" />
+</joint> -->
+
+<link name="work"/>
+
+<joint name="table_to_work" type="fixed">
+  <parent link="table"/>
+  <child link="work"/>
+  <origin xyz="0 0.1 0" rpy="0 0 0" />
+</joint>
+
+<!-- <xacro:include filename="$(find setup_2_support)/urdf/work/tank.urdf" /> -->
+
+
+</robot>

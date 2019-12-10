@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+    <xacro:macro name="rail">
+
+    <link name="rail_base">
+        <visual>
+            <origin xyz="0 2.0 0.15" rpy="0 0 0"/>
+            <geometry>
+            <box size="0.8 5.0 0.3"/>
+            </geometry>
+            <material name="blue"/>
+        </visual>
+        <collision>
+            <origin xyz="0 2.0 0.15" rpy="0 0 0"/>
+            <geometry>
+            <box size="0.8 5.0 0.3"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="robot_mount" />
+
+    <!-- There could be an extra degree of freedom along the z-axis of the carrier -->
+    <!-- <joint name="carrier_to_robot_mount" type="prismatic">
+        <parent link="carrier"/>
+        <child link="robot_mount"/>
+        <limit effort="1000.0" lower="0.0" upper="1.0" velocity="0.5"/>
+        <origin xyz="0 0.5 1.5" rpy="0 ${radians(180)} 0" />
+        <axis xyz="0 0 1" />
+    </joint> -->
+
+    <joint name="rail_base_to_robot_mount" type="prismatic">
+        <parent link="rail_base"/>
+        <limit effort="1000.0" lower="0.0" upper="4.0" velocity="0.5"/>
+        <child link="robot_mount"/>
+        <origin xyz="0 0 0.3" rpy="0 0 0" />
+        <axis xyz="0 1 0" />
+    </joint>
+
+    </xacro:macro>
+</robot>
