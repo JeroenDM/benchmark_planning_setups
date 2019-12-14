@@ -46,7 +46,8 @@ Connects to end-effector with link  "tool0"
     </collision>
 </link>
 
-<!-- <link name="torch_tip"/> -->
+<link name="torch_tip"/>
+
 <link name="tool_tip"/>
 
 <joint name="tool0_to_torch" type="fixed">
@@ -55,18 +56,18 @@ Connects to end-effector with link  "tool0"
     <child link="torch"/>
 </joint>
 
-<joint name="torch_to_tool_tip" type="fixed">
+<joint name="torch_to_torch_tip" type="fixed">
     <parent link="torch"/>
-    <child link="tool_tip"/>
+    <child link="torch_tip"/>
     <origin xyz="0.315 0 0.035" rpy="0 2.3560569232 0" />
 </joint>
 
-<!-- weld tip offset from workpiece -->
-<!-- <joint name="torch_tip_to_tool_tip" type="fixed">
+<!-- weld tip offset from workpiece --> 
+<joint name="torch_tip_to_tool_tip" type="fixed">
     <parent link="torch_tip"/>
     <child link="tool_tip"/>
-    <origin xyz="0 0 0" rpy="0 0 0" />
-</joint> -->
+    <origin xyz="0 0 0.05" rpy="0 0 0" />
+</joint>
 
 <!-- Rotation table
 Connects to world with link        "table_base"
