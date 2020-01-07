@@ -1,3 +1,0 @@
-[submodule "kuka_experimental"]
-	path = kuka_experimental
-	url = https://github.com/ros-industrial/kuka_experimental.git

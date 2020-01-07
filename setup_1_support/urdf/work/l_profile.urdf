@@ -35,7 +35,7 @@
   </collision>
 </link>
 
-<link name="obstacle">
+<!-- <link name="obstacle">
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
@@ -49,7 +49,7 @@
       <box size="0.1 0.02 0.04"/>
     </geometry>
   </collision>
-</link>
+</link> -->
 
 <joint name="world_to_l_base" type="fixed">
   <parent link="world"/>
@@ -63,10 +63,10 @@
   <origin xyz="0.09 0 0.11" rpy="0 0 0" />
 </joint>
 
-<joint name="l_base_to_obstacle" type="fixed">
+<!-- <joint name="l_base_to_obstacle" type="fixed">
   <parent link="l_base"/>
   <child link="obstacle"/>
   <origin xyz="-0.02 0 0.045" rpy="0 0 0" />
-</joint>
+</joint> -->
 
 </robot>

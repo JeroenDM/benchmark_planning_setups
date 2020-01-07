@@ -5,7 +5,6 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
-        - /RobotState1
       Splitter Ratio: 0.7425600290298462
     Tree Height: 398
   - Class: rviz/Help
@@ -190,7 +189,7 @@ Visualization Manager:
         Interactive Marker Size: 0
         Joint Violation Color: 255; 0; 255
         Planning Group: manipulator
-        Query Goal State: true
+        Query Goal State: false
         Query Start State: false
         Show Workspace: false
         Start State Alpha: 1
@@ -305,7 +304,7 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
-        Robot Alpha: 0.5
+        Robot Alpha: 1
         Show Robot Collision: false
         Show Robot Visual: true
       Value: true
@@ -323,7 +322,7 @@ Visualization Manager:
       Marker Topic: /rviz_visual_tools
       Name: MarkerArray
       Namespaces:
-        Axis: true
+        {}
       Queue Size: 100
       Value: true
     - Attached Body Color: 150; 50; 150
@@ -430,7 +429,7 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
       Name: RobotState
-      Robot Alpha: 1
+      Robot Alpha: 0.5
       Robot Description: robot_description
       Robot State Topic: /arf_sample_constraint_server
       Show All Links: true
@@ -453,25 +452,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/XYOrbit
-      Distance: 5.446748733520508
+      Distance: 12.041025161743164
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 2.706498622894287
-        Y: 1.0763673782348633
+        X: 1.1787910461425781
+        Y: 1.107081413269043
         Z: 9.38773723646591e-7
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.5297977328300476
+      Pitch: 0.2197977900505066
       Target Frame: world
       Value: XYOrbit (rviz)
-      Yaw: 5.504949569702148
+      Yaw: 2.24676251411438
     Saved: ~
 Window Geometry:
   Displays:

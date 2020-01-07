@@ -9,26 +9,26 @@
   <origin xyz="1 1 0" rpy="0 0 1.5707963267948966" />
 </joint>
 
-<link name="wobj">
-  <visual>
-    <origin xyz="0 0 0" rpy="0 0 0"/>
-    <geometry>
-      <mesh filename="halfopen_box.stl"  scale=".001 .001 .001"/>
-    </geometry>
-    <material name="gray"/>
-  </visual>
-  <collision>
-    <origin xyz="0 0 0" rpy="0 0 0"/>
-    <geometry>
-      <mesh filename="halfopen_box.stl"  scale=".001 .001 .001"/>
-    </geometry>
-  </collision>
-</link>
-
 <!-- <link name="wobj">
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
+      <mesh filename="halfopen_box.stl"  scale=".001 .001 .001"/>
+    </geometry>
+    <material name="gray"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="halfopen_box.stl"  scale=".001 .001 .001"/>
+    </geometry>
+  </collision>
+</link> -->
+
+<link name="wobj">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
       <box size="0.01 0.01 0.01"/>
     </geometry>
     <material name="gray"/>
@@ -39,5 +39,5 @@
       <box size="0.01 0.01 0.01"/>
     </geometry>
   </collision>
-</link> -->
+</link>
 </robot>
