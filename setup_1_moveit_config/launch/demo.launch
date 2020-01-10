@@ -64,4 +64,6 @@
 
   <node name="publish_work_poses" pkg="setup_1_support" type="publish_work_poses.py" args="$(arg work).irl" />
 
+  <rosparam command="load" file="$(find setup_1_support)/config/planning_config.yaml" />
+
 </launch>

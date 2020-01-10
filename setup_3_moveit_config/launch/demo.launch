@@ -58,4 +58,6 @@
     <arg name="moveit_warehouse_database_path" value="$(arg db_path)"/>
   </include>
 
+  <rosparam command="load" file="$(find setup_3_support)/config/planning_config.yaml" />
+
 </launch>
