@@ -4,12 +4,16 @@ pose work 0.8 -0.5 0 0 0 0
 set-reference work
 pose P1 0.18 0 0.02 0 135 90
 pose P2 0.18 1 0.02 0 135 90
+pose Papp 0.16 0 0.04 0 135 90
+pose Pret 0.16 1 0.04 0 135 90
 set-reference default
 
 commands
 movej home
+movep Papp constraints C1
 movep P1 constraints C1 approach 0 0 0.1
 movel P2 constraints C1 retract 0 0 -0.1
+movep Pret constraints C1
 movej home
 
 constraints
