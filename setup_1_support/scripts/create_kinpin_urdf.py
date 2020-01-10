@@ -10,10 +10,10 @@ import numpy as np
 from string import Template
 
 # link names
-names = ["u_profile", "obstacle", "table", "side_1", "side_2"]
+names = ["u_profile", "obstacle", "table", "side_1", "side_2", "u_profile_2"]
 
 # dimensions
-obs_h = 0.03
+obs_h = 0.01
 obs_off = 0.04
 L = 0.5  # length of all stuff in y-direction
 obs_l = L / 6
@@ -55,23 +55,25 @@ def create_task(location):
 
 def create_urdf_data(location):
     """ Create dict containing the dimensions for the links and joints in the urdf.
-    
+
     See the global variable 'names' for what dimensions go with wich link.
     """
 
     sizes = [
-        [0.27, L, 0.21],
+        [0.2, L, 0.1],
         [0.2, obs_l, obs_h],
-        [0.7, 0.7, 0.1],
-        [0.2, 0.1, 0.055],
-        [0.2, 0.1, 0.055],
+        [0.7, 0.7, 0.01],
+        [0.3, 0.1, 0.055],
+        [0.3, 0.1, 0.055],
+        [0.2, L, 0.1],
     ]
     positions = [
-        [sizes[0][0] / 2, 0, sizes[0][2] / 2],
-        [-(sizes[1][0] / 2) - obs_off, 0, obs_h / 2],
-        [0, 0, -0.05],
-        [-sizes[3][0] / 2, L / 2 - sizes[3][1] / 2, sizes[3][2] / 2],
-        [-sizes[3][0] / 2, -L / 2 + sizes[3][1] / 2, sizes[3][2] / 2],
+        [sizes[2][0]/2 - sizes[0][0] / 2, 0, sizes[0][2] / 2],
+        [0, 0, obs_h / 2],
+        [0, 0, -0.005],
+        [0, L / 2 - sizes[3][1] / 2, sizes[3][2] / 2],
+        [0, -L / 2 + sizes[3][1] / 2, sizes[3][2] / 2],
+        [-sizes[2][0]/2 + sizes[5][0] / 2, 0, sizes[5][2] / 2],
     ]
 
     # move to the absolute location given as input
@@ -119,5 +121,5 @@ if __name__ == "__main__":
                 "content": content
             }))
 
-    with open("{}.irl".format(wobj_name), "w") as file:
-        file.write(task_temp.substitute(create_task(wobj_location)))
+    # with open("{}.irl".format(wobj_name), "w") as file:
+    #     file.write(task_temp.substitute(create_task(wobj_location)))

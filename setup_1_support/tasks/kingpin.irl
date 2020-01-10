@@ -1,9 +1,14 @@
 variables
 config home 0 0 0 0 0 0
-pose start 0.85 -0.145 0.0 0.65328148 0.65328148 0.27059805 0.27059805
-pose stop 0.85 0.145 0.0 0.65328148 0.65328148 0.27059805 0.27059805
+pose P1 1.0 -0.15 0 0 0 0
+pose P2 1.0 0.15 0 0 0 0
+pose P3 0.7 -0.15 0 0 0 0
+pose P4 0.7 0.15 0 0 0 0 
 
 commands
-movep start
-movel stop
+movej home
+movep P1
+movel P2
+movep P3
+movel P4
 movej home

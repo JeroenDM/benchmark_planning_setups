@@ -1,4 +1,10 @@
 <?xml version="1.0"?>
 <robot name="$name" xmlns:xacro="http://wiki.ros.org/xacro">
+<link name="world"/>
+
+<material name="green">
+    <color rgba="0 0.8 0 1.0"/>
+</material>
+
 $content
 </robot>
