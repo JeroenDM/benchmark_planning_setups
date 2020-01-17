@@ -11,9 +11,9 @@ set-reference default
 commands
 movej home
 movep Papp constraints C1
-movep P1 constraints C1 approach 0 0 0.1
+movel P1 constraints C1 approach 0 0 0.1
 movel P2 constraints C1 retract 0 0 -0.1
-movep Pret constraints C1
+movel Pret constraints C1
 movej home
 
 constraints

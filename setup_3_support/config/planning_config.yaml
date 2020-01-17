@@ -1,6 +1,6 @@
 manipulator:
   joint_names:
-    - rail_base_to_carrier"
+    - rail_base_to_carrier
     - joint_a1
     - joint_a2
     - joint_a3

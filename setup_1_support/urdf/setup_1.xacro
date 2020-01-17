@@ -21,16 +21,16 @@
 <!-- End-effector -->
 <link name="torch">
     <visual>
-    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <origin xyz="0.380 0 0" rpy="0 -0.78539816339 0"/>
         <geometry>
-            <mesh filename="package://setup_1_support/meshes/visual/torch.stl"  scale=".01 .01 .01"/>
+            <mesh filename="package://setup_1_support/meshes/visual/mig_torch_small.stl"  scale="1 1 1"/>
         </geometry>
         <material name="gray"/>
     </visual>
     <collision>
-    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <origin xyz="0.380 0 0" rpy="0 -0.78539816339 0"/>
         <geometry>
-            <mesh filename="package://setup_1_support/meshes/collision/torch.stl"  scale=".01 .01 .01"/>
+            <mesh filename="package://setup_1_support/meshes/collision/mig_torch_small.stl"  scale="1 1 1"/>
         </geometry>
     </collision>
 </link>
@@ -48,14 +48,14 @@
 <joint name="torch_to_torch_tip" type="fixed">
     <parent link="torch"/>
     <child link="torch_tip"/>
-    <origin xyz="0.315 0 0.035" rpy="0 2.3560569232 0" />
+    <origin xyz="0.380 0 0" rpy="0 2.3560569232 0" />
 </joint>
 
 <!-- weld tip offset from workpiece --> 
 <joint name="torch_tip_to_tool_tip" type="fixed">
     <parent link="torch_tip"/>
     <child link="tool_tip"/>
-    <origin xyz="0 0 0.01" rpy="0 0 0" />
+    <origin xyz="0 0 0.02" rpy="0 0 0" />
 </joint>
 
 <!-- <link name="work" />

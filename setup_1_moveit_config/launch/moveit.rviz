@@ -3,7 +3,9 @@ Panels:
     Help Height: 84
     Name: Displays
     Property Tree Widget:
-      Expanded: ~
+      Expanded:
+        - /MotionPlanning1
+        - /MotionPlanning1/Scene Robot1
       Splitter Ratio: 0.7425600290298462
     Tree Height: 380
   - Class: rviz/Help
@@ -237,7 +239,7 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
-        Robot Alpha: 0.5
+        Robot Alpha: 1
         Show Robot Collision: false
         Show Robot Visual: true
       Value: true
@@ -247,7 +249,7 @@ Visualization Manager:
       Marker Topic: visual_markers
       Name: Marker
       Namespaces:
-        Cylinder: true
+        {}
       Queue Size: 100
       Value: true
     - Attached Body Color: 150; 50; 150
@@ -321,21 +323,99 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
       Name: RobotState
-      Robot Alpha: 1
+      Robot Alpha: 0.5
       Robot Description: robot_description
-      Robot State Topic: display_robot_state
+      Robot State Topic: /arf_sample_constraint_server
       Show All Links: true
       Show Highlights: true
       Value: true
       Visual Enabled: true
     - Class: rviz/MarkerArray
-      Enabled: true
-      Marker Topic: visualization_marker_array
+      Enabled: false
+      Marker Topic: /rviz_visual_tools
       Name: MarkerArray
       Namespaces:
         {}
       Queue Size: 100
+      Value: false
+    - Attached Body Color: 150; 50; 150
+      Class: moveit_rviz_plugin/RobotState
+      Collision Enabled: false
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        base:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        link_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        link_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        link_3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        link_4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        link_5:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        link_6:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        tool0:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        tool_tip:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        torch:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        torch_tip:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        world:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+      Name: RobotState
+      Robot Alpha: 1
+      Robot Description: robot_description
+      Robot State Topic: /arf_planning_server
+      Show All Links: true
+      Show Highlights: true
       Value: true
+      Visual Enabled: true
   Enabled: true
   Global Options:
     Background Color: 255; 255; 255
@@ -352,25 +432,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/XYOrbit
-      Distance: 4.09848690032959
+      Distance: 1.7528091669082642
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.408877968788147
-        Y: 0.050863564014434814
-        Z: 2.2351800055275817e-7
+        X: 0.8371621966362
+        Y: 0.016566574573516846
+        Z: 1.9371566395420814e-7
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.1997971534729004
+      Pitch: 0.26479780673980713
       Target Frame: world
       Value: XYOrbit (rviz)
-      Yaw: 5.324942111968994
+      Yaw: 1.726758360862732
     Saved: ~
 Window Geometry:
   Displays:
