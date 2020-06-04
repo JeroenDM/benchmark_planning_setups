@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<robot name="demo_table" xmlns:xacro="http://wiki.ros.org/xacro">
+
+<xacro:include filename="$(find setup_4_support)/urdf/colors.xacro" />
+
+<link name="world"/>
+
+<!-- Robot -->
+<xacro:include filename="$(find kuka_kr5_support)/urdf/kr5_arc_macro.xacro" />
+<xacro:kuka_kr5_arc prefix=""/>
+
+<joint name="world_to_base_link" type="fixed">
+  <parent link="world"/>
+  <child link="base_link"/>
+</joint>
+
+
+<!-- End-effector
+<link name="torch">
+    <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+            <mesh filename="package://setup_4_support/meshes/visual/torch.stl"  scale=".01 .01 .01"/>
+        </geometry>
+        <material name="gray"/>
+    </visual>
+    <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+            <mesh filename="package://setup_4_support/meshes/collision/torch.stl"  scale=".01 .01 .01"/>
+        </geometry>
+    </collision>
+</link>
+
+<link name="tool_tip"/>
+
+<joint name="tool0_to_torch" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -1.57079632679 0" />
+    <parent link="tool0"/>
+    <child link="torch"/>
+</joint>
+
+<joint name="torch_to_tool_tip" type="fixed">
+    <parent link="torch"/>
+    <child link="tool_tip"/>
+    <origin xyz="0.315 0 0.035" rpy="0 2.3560569232 0" />
+</joint>
+-->
+
+<!---->
+<link name="torch" />
+<link name="tool_tip" />
+<joint name="tool0_to_torch" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="tool0"/>
+    <child link="torch"/>
+</joint>
+<joint name="torch_to_tool_tip" type="fixed">
+    <parent link="torch"/>
+    <child link="tool_tip"/>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+</joint>
+
+
+<!-- weld tip offset from workpiece -->
+<!--
+<link name="torch_tip"/> 
+<joint name="torch_tip_to_tool_tip" type="fixed">
+    <parent link="torch_tip"/>
+    <child link="tool_tip"/>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+</joint> -->
+
+
+<!-- Short table and two blocks -->
+<xacro:include filename="$(find setup_4_support)/urdf/table_with_blocks.urdf" /> 
+<!-- <xacro:include filename="$(find setup_4_support)/urdf/table1.urdf" /> -->
+
+</robot>
