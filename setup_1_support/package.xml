@@ -26,8 +26,8 @@
   <build_export_depend>xacro</build_export_depend>
 
   <exec_depend>xacro</exec_depend>
-  <exec_depend>rviz_tools_py</exec_depend>
-  <exec_depend>kuka_kr5_support</exec_depend>
+  <!-- <exec_depend>rviz_tools_py</exec_depend> -->
+  <!-- <exec_depend>kuka_kr5_support</exec_depend> -->
 
   <export></export>
 </package>
