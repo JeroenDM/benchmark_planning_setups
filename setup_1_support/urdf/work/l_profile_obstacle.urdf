@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot name="l_profile" xmlns:xacro="http://wiki.ros.org/xacro">
+<robot name="l_profile_obstacle" xmlns:xacro="http://wiki.ros.org/xacro">
 
 <link name="world" />
 
@@ -35,22 +35,6 @@
   </collision>
 </link>
 
-<!-- <link name="obstacle">
-  <visual>
-    <origin xyz="0 0 0" rpy="0 0 0"/>
-    <geometry>
-      <box size="0.1 0.02 0.05"/>
-    </geometry>
-    <material name="green"/>
-  </visual>
-  <collision>
-    <origin xyz="0 0 0" rpy="0 0 0"/>
-    <geometry>
-      <box size="0.1 0.02 0.04"/>
-    </geometry>
-  </collision>
-</link> -->
-
 <joint name="world_to_l_base" type="fixed">
   <parent link="world"/>
   <child link="l_base"/>
@@ -63,10 +47,26 @@
   <origin xyz="0.09 0 0.11" rpy="0 0 0" />
 </joint>
 
-<!-- <joint name="l_base_to_obstacle" type="fixed">
+<link name="obstacle">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <box size="0.1 0.1 0.05"/>
+    </geometry>
+    <material name="green"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <box size="0.1 0.1 0.04"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="l_base_to_obstacle" type="fixed">
   <parent link="l_base"/>
   <child link="obstacle"/>
   <origin xyz="-0.02 0 0.045" rpy="0 0 0" />
-</joint> -->
+</joint>
 
 </robot>
