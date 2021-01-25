@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<robot name="setup_1" xmlns:xacro="http://wiki.ros.org/xacro">
+
+<xacro:arg name="work" default="nothing.urdf"/>
+
+<!-- Add some color to the world! -->
+<xacro:include filename="$(find setup_1_support)/urdf/colors.xacro" />
+
+<!-- Fixed reference frame for all setups called 'world' -->
+<link name="world"/>
+
+<!-- Robot -->
+<xacro:include filename="$(find kuka_kr5_support)/urdf/kr5_arc_macro.xacro" />
+<xacro:kuka_kr5_arc prefix=""/>
+
+<joint name="world_to_base_link" type="fixed">
+  <parent link="world"/>
+  <child link="base_link"/>
+</joint>
+
+<!-- End-effector -->
+<link name="teapot">
+    <visual>
+    <origin xyz="0.04 0 0.08" rpy="0 -${pi/2} 0"/>
+        <geometry>
+            <mesh filename="package://setup_1_support/meshes/visual/utah_teapot.stl"  scale="0.01 0.01 0.01"/>
+        </geometry>
+        <material name="gray"/>
+    </visual>
+    <collision>
+    <origin xyz="0.04 0 0.08" rpy="0 -${pi/2} 0"/>
+        <geometry>
+            <mesh filename="package://setup_1_support/meshes/collision/utah_teapot.stl"  scale="0.01 0.01 0.01"/>
+        </geometry>
+    </collision>
+</link>
+
+
+<link name="tool_tip"/>
+
+<joint name="tool0_to_teapot" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="tool0"/>
+    <child link="teapot"/>
+</joint>
+
+
+<joint name="teapot_to_tool_tip" type="fixed">
+    <parent link="teapot"/>
+    <child link="tool_tip"/>
+    <origin xyz="-0.025 0 0.16" rpy="0 0 0" />
+</joint>
+
+</robot>

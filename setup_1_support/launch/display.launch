@@ -1,6 +1,6 @@
 <launch>
 
-  <arg name="model" default="$(find setup_1_support)/urdf/setup_1.xacro"/>
+  <arg name="model" default="$(find setup_1_support)/urdf/setup_teapot.xacro"/>
   <arg name="work" default="nothing"/>
   <arg name="gui" default="true" />
   <arg name="rvizconfig" default="$(find setup_1_support)/config/display_settings.rviz" />

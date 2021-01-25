@@ -17,4 +17,4 @@ movel Pret constraints C1
 movej home
 
 constraints
-rpy C1 symmetric 0 0 3.1415
+rpy C1 0 0 3.1415 0 0 3.1415

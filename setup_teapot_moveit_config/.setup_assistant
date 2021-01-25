@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: setup_1_support
+    relative_path: urdf/setup_teapot.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/setup_1.srdf
+  CONFIG:
+    author_name: jeroen
+    author_email: jeroen@todo.com
+    generated_timestamp: 1611582775

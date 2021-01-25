@@ -19,6 +19,7 @@
   <!-- Load default settings for kinematics; these settings are overridden by settings in a node's namespace -->
   <group ns="$(arg robot_description)_kinematics">
     <rosparam command="load" file="$(find setup_3_moveit_config)/config/kinematics.yaml"/>
+    <rosparam command="load" ns="manipulator" file="$(find kuka_kr5_support)/config/opw_kinematics_kr5.yaml"/>
   </group>
 
 </launch>
