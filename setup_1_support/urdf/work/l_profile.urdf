@@ -3,6 +3,22 @@
 
 <link name="world" />
 
+<link name="floor">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <box size="2 2 0.02"/>
+    </geometry>
+    <material name="grey"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <box size="2 2 0.02"/>
+    </geometry>
+  </collision>
+</link>
+
 <link name="l_base">
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -50,6 +66,12 @@
     </geometry>
   </collision>
 </link> -->
+
+<joint name="world_to_floor" type="fixed">
+  <parent link="world"/>
+  <child link="floor"/>
+  <origin xyz="1 0 -0.02" rpy="0 0 0" />
+</joint>
 
 <joint name="world_to_l_base" type="fixed">
   <parent link="world"/>
