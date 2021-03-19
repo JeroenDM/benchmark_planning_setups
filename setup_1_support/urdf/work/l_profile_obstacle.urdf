@@ -1,7 +1,15 @@
 <?xml version="1.0"?>
 <robot name="l_profile_obstacle" xmlns:xacro="http://wiki.ros.org/xacro">
-
+  
 <link name="world" />
+
+<material name="grey">
+  <color rgba="0.8 0.8 0.8 1"/>
+</material>
+
+  <material name="red">
+  <color rgba="1 0 0 1"/>
+</material>
 
 <link name="floor">
   <visual>
@@ -31,7 +39,7 @@
     <geometry>
       <box size="0.2 1 0.02"/>
     </geometry>
-    <material name="green"/>
+    <material name="grey"/>
   </visual>
   <collision>
     <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -47,7 +55,7 @@
     <geometry>
       <box size="0.02 1 0.2"/>
     </geometry>
-    <material name="green"/>
+    <material name="grey"/>
   </visual>
   <collision>
     <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -75,7 +83,7 @@
     <geometry>
       <box size="0.1 0.1 0.05"/>
     </geometry>
-    <material name="green"/>
+    <material name="red"/>
   </visual>
   <collision>
     <origin xyz="0 0 0" rpy="0 0 0"/>
