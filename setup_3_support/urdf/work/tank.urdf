@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<robot name="tank" xmlns:xacro="http://wiki.ros.org/xacro">
+
+<link name="work"/>
+
+<link name="tank">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <cylinder length="2.0" radius="0.3"/>
+    </geometry>
+    <material name="green"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <cylinder length="2.0" radius="0.3"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="work_to_tank" type="fixed">
+  <parent link="work"/>
+  <child link="tank"/>
+  <origin xyz="0.5 1.0 0.15" rpy="-1.5707963267948966 0 0" />
+</joint>
+
+</robot>
